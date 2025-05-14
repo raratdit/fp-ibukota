@@ -1,0 +1,382 @@
+[
+    {
+        "question": "Ibu kota provinsi Aceh adalah?",
+        "options": [
+            "Banda Aceh",
+            "Medan",
+            "Pekanbaru",
+            "Padang"
+        ],
+        "answer": "Banda Aceh"
+    },
+    {
+        "question": "Ibu kota provinsi Sumatera Utara adalah?",
+        "options": [
+            "Medan",
+            "Palembang",
+            "Jambi",
+            "Banda Aceh"
+        ],
+        "answer": "Medan"
+    },
+    {
+        "question": "Ibu kota provinsi Sumatera Barat adalah?",
+        "options": [
+            "Padang",
+            "Pekanbaru",
+            "Medan",
+            "Jambi"
+        ],
+        "answer": "Padang"
+    },
+    {
+        "question": "Ibu kota provinsi Riau adalah?",
+        "options": [
+            "Pekanbaru",
+            "Padang",
+            "Batam",
+            "Tanjung Pinang"
+        ],
+        "answer": "Pekanbaru"
+    },
+    {
+        "question": "Ibu kota provinsi Kepulauan Riau adalah?",
+        "options": [
+            "Tanjung Pinang",
+            "Batam",
+            "Pekanbaru",
+            "Jambi"
+        ],
+        "answer": "Tanjung Pinang"
+    },
+    {
+        "question": "Ibu kota provinsi Jambi adalah?",
+        "options": [
+            "Jambi",
+            "Palembang",
+            "Padang",
+            "Bengkulu"
+        ],
+        "answer": "Jambi"
+    },
+    {
+        "question": "Ibu kota provinsi Sumatera Selatan adalah?",
+        "options": [
+            "Palembang",
+            "Bengkulu",
+            "Jambi",
+            "Medan"
+        ],
+        "answer": "Palembang"
+    },
+    {
+        "question": "Ibu kota provinsi Bengkulu adalah?",
+        "options": [
+            "Bengkulu",
+            "Jambi",
+            "Palembang",
+            "Padang"
+        ],
+        "answer": "Bengkulu"
+    },
+    {
+        "question": "Ibu kota provinsi Lampung adalah?",
+        "options": [
+            "Bandar Lampung",
+            "Palembang",
+            "Jambi",
+            "Bengkulu"
+        ],
+        "answer": "Bandar Lampung"
+    },
+    {
+        "question": "Ibu kota provinsi Bangka Belitung adalah?",
+        "options": [
+            "Pangkalpinang",
+            "Tanjung Pandan",
+            "Tanjung Pinang",
+            "Batam"
+        ],
+        "answer": "Pangkalpinang"
+    },
+    {
+        "question": "Ibu kota provinsi DKI Jakarta adalah?",
+        "options": [
+            "Jakarta",
+            "Depok",
+            "Tangerang",
+            "Bekasi"
+        ],
+        "answer": "Jakarta"
+    },
+    {
+        "question": "Ibu kota provinsi Jawa Barat adalah?",
+        "options": [
+            "Bandung",
+            "Jakarta",
+            "Cirebon",
+            "Bekasi"
+        ],
+        "answer": "Bandung"
+    },
+    {
+        "question": "Ibu kota provinsi Banten adalah?",
+        "options": [
+            "Serang",
+            "Tangerang",
+            "Cilegon",
+            "Bandung"
+        ],
+        "answer": "Serang"
+    },
+    {
+        "question": "Ibu kota provinsi Jawa Tengah adalah?",
+        "options": [
+            "Semarang",
+            "Solo",
+            "Yogyakarta",
+            "Surakarta"
+        ],
+        "answer": "Semarang"
+    },
+    {
+        "question": "Ibu kota provinsi DI Yogyakarta adalah?",
+        "options": [
+            "Yogyakarta",
+            "Semarang",
+            "Surakarta",
+            "Magelang"
+        ],
+        "answer": "Yogyakarta"
+    },
+    {
+        "question": "Ibu kota provinsi Jawa Timur adalah?",
+        "options": [
+            "Surabaya",
+            "Malang",
+            "Kediri",
+            "Madiun"
+        ],
+        "answer": "Surabaya"
+    },
+    {
+        "question": "Ibu kota provinsi Bali adalah?",
+        "options": [
+            "Denpasar",
+            "Singaraja",
+            "Mataram",
+            "Kupang"
+        ],
+        "answer": "Denpasar"
+    },
+    {
+        "question": "Ibu kota provinsi Nusa Tenggara Barat adalah?",
+        "options": [
+            "Mataram",
+            "Kupang",
+            "Denpasar",
+            "Bima"
+        ],
+        "answer": "Mataram"
+    },
+    {
+        "question": "Ibu kota provinsi Nusa Tenggara Timur adalah?",
+        "options": [
+            "Kupang",
+            "Mataram",
+            "Atambua",
+            "Ende"
+        ],
+        "answer": "Kupang"
+    },
+    {
+        "question": "Ibu kota provinsi Kalimantan Barat adalah?",
+        "options": [
+            "Pontianak",
+            "Samarinda",
+            "Palangka Raya",
+            "Banjarmasin"
+        ],
+        "answer": "Pontianak"
+    },
+    {
+        "question": "Ibu kota provinsi Kalimantan Tengah adalah?",
+        "options": [
+            "Palangka Raya",
+            "Pontianak",
+            "Samarinda",
+            "Banjarmasin"
+        ],
+        "answer": "Palangka Raya"
+    },
+    {
+        "question": "Ibu kota provinsi Kalimantan Selatan adalah?",
+        "options": [
+            "Banjarmasin",
+            "Banjarbaru",
+            "Palangka Raya",
+            "Balikpapan"
+        ],
+        "answer": "Banjarmasin"
+    },
+    {
+        "question": "Ibu kota provinsi Kalimantan Timur adalah?",
+        "options": [
+            "Samarinda",
+            "Balikpapan",
+            "Banjarmasin",
+            "Pontianak"
+        ],
+        "answer": "Samarinda"
+    },
+    {
+        "question": "Ibu kota provinsi Kalimantan Utara adalah?",
+        "options": [
+            "Tanjung Selor",
+            "Tarakan",
+            "Samarinda",
+            "Nunukan"
+        ],
+        "answer": "Tanjung Selor"
+    },
+    {
+        "question": "Ibu kota provinsi Sulawesi Utara adalah?",
+        "options": [
+            "Manado",
+            "Gorontalo",
+            "Palu",
+            "Makassar"
+        ],
+        "answer": "Manado"
+    },
+    {
+        "question": "Ibu kota provinsi Gorontalo adalah?",
+        "options": [
+            "Gorontalo",
+            "Manado",
+            "Palu",
+            "Kendari"
+        ],
+        "answer": "Gorontalo"
+    },
+    {
+        "question": "Ibu kota provinsi Sulawesi Tengah adalah?",
+        "options": [
+            "Palu",
+            "Gorontalo",
+            "Kendari",
+            "Makassar"
+        ],
+        "answer": "Palu"
+    },
+    {
+        "question": "Ibu kota provinsi Sulawesi Barat adalah?",
+        "options": [
+            "Mamuju",
+            "Palu",
+            "Makassar",
+            "Kendari"
+        ],
+        "answer": "Mamuju"
+    },
+    {
+        "question": "Ibu kota provinsi Sulawesi Selatan adalah?",
+        "options": [
+            "Makassar",
+            "Mamuju",
+            "Palu",
+            "Kendari"
+        ],
+        "answer": "Makassar"
+    },
+    {
+        "question": "Ibu kota provinsi Sulawesi Tenggara adalah?",
+        "options": [
+            "Kendari",
+            "Makassar",
+            "Palu",
+            "Gorontalo"
+        ],
+        "answer": "Kendari"
+    },
+    {
+        "question": "Ibu kota provinsi Maluku adalah?",
+        "options": [
+            "Ambon",
+            "Ternate",
+            "Sofifi",
+            "Sorong"
+        ],
+        "answer": "Ambon"
+    },
+    {
+        "question": "Ibu kota provinsi Maluku Utara adalah?",
+        "options": [
+            "Sofifi",
+            "Ternate",
+            "Ambon",
+            "Tidore"
+        ],
+        "answer": "Sofifi"
+    },
+    {
+        "question": "Ibu kota provinsi Papua adalah?",
+        "options": [
+            "Jayapura",
+            "Manokwari",
+            "Timika",
+            "Wamena"
+        ],
+        "answer": "Jayapura"
+    },
+    {
+        "question": "Ibu kota provinsi Papua Barat adalah?",
+        "options": [
+            "Manokwari",
+            "Sorong",
+            "Jayapura",
+            "Fakfak"
+        ],
+        "answer": "Manokwari"
+    },
+    {
+        "question": "Ibu kota provinsi Papua Tengah adalah?",
+        "options": [
+            "Nabire",
+            "Timika",
+            "Wamena",
+            "Jayapura"
+        ],
+        "answer": "Nabire"
+    },
+    {
+        "question": "Ibu kota provinsi Papua Pegunungan adalah?",
+        "options": [
+            "Wamena",
+            "Nabire",
+            "Jayapura",
+            "Timika"
+        ],
+        "answer": "Wamena"
+    },
+    {
+        "question": "Ibu kota provinsi Papua Selatan adalah?",
+        "options": [
+            "Merauke",
+            "Jayapura",
+            "Nabire",
+            "Wamena"
+        ],
+        "answer": "Merauke"
+    },
+    {
+        "question": "Ibu kota provinsi Papua Barat Daya adalah?",
+        "options": [
+            "Sorong",
+            "Manokwari",
+            "Fakfak",
+            "Jayapura"
+        ],
+        "answer": "Sorong"
+    }
+]
