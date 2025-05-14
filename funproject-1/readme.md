@@ -18,7 +18,7 @@ Aplikasi kuis sederhana berbasis **Streamlit** untuk menguji pengetahuan penggun
 | ![Preview Soal](assets/preview_soal.jpg) | ![Preview Hasil](assets/preview_hasil.jpg) |
 
 ## 🧱 Struktur Folder
-
+```
 fun_project_1_REAID/
 │
 ├── app.py
@@ -30,7 +30,7 @@ fun_project_1_REAID/
 │ ├── preview_soal.jpg # Screenshot soal (opsional)
 │ └── preview_hasil.jpg# Screenshot hasil (opsional)
 └── README.md
-
+```
 
 ## 🛠️ Cara Menjalankan
 
