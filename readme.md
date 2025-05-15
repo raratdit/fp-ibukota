@@ -1,61 +1,54 @@
-# 📍 Mini Quiz App - Tebak Ibu Kota Provinsi
+# 🇮🇩 Kuis Ibu Kota Provinsi - Streamlit App
 
-Aplikasi kuis sederhana berbasis **Streamlit** untuk menguji pengetahuan pengguna tentang **ibu kota provinsi di Indonesia**. Setelah menjawab semua pertanyaan, pengguna akan mendapatkan **skor** dan **motivasi personal** berdasarkan performa kuis mereka yang dihasilkan oleh **model AI (LLM)**.
+Aplikasi web kuis interaktif untuk menguji pengetahuan tentang **ibu kota provinsi di Indonesia**. Dibuat dengan Python dan Streamlit.
 
-## 🚀 Fitur Utama
+---
 
-- ✅ Input nama pengguna dan jumlah soal kuis
-- ✅ Pertanyaan pilihan ganda acak dari file JSON
-- ✅ Skoring otomatis berdasarkan jawaban
-- ✅ Motivasi personal berbasis AI (LLM via Groq API)
-- ✅ Tampilan hasil dengan gambar & animasi 🎉
-- ✅ UI sederhana dan intuitif
+## 🚀 Fitur
 
-## 🖼️ Preview
+- Input nama pengguna
+- Pilih jumlah soal (1–10)
+- Pertanyaan dan pilihan jawaban acak
+- Penilaian otomatis
+- Review jawaban (benar/salah)
+- Grafik hasil jawaban (Bar chart)
+- Motivasi berbasis skor
+- Tampilan hasil berupa gambar dan emoji 🎯✅❌
 
-| Tampilan Kuis | Tampilan Hasil |
-|---------------|----------------|
-| ![Preview Soal](assets/preview_soal.jpg) | ![Preview Hasil](assets/preview_hasil.jpg) |
+---
 
-## 🧱 Struktur Folder
+## 📦 Struktur Proyek
 ```
-fun_project_1_REAID/
-│
-├── app.py
+├── app.py # File utama Streamlit
 ├── assets/
-│ ├── data.json # Data pertanyaan kuis
-│ ├── a.jpg # Gambar untuk nilai A (>=80)
-│ ├── b.jpg # Gambar untuk nilai B (60–79)
-│ ├── c.jpg # Gambar untuk nilai C (<60)
-│ ├── preview_soal.jpg # Screenshot soal (opsional)
-│ └── preview_hasil.jpg# Screenshot hasil (opsional)
-└── README.md
+│ ├── data.json # Soal dan jawaban dalam format JSON
+│ ├── a.jpg # Gambar untuk nilai A dan SS
+│ ├── b.jpg # Gambar untuk nilai B
+│ └── c.jpg # Gambar untuk nilai C
+```
+---
+
+## 📝 Format `data.json`
+
+```json
+[
+  {
+    "question": "Apa ibu kota dari Provinsi Jawa Barat?",
+    "options": ["Bandung", "Jakarta", "Semarang", "Surabaya"],
+    "answer": "Bandung"
+  },
+  ...
+]
 ```
 
-## 🛠️ Cara Menjalankan
-
-1. **Clone atau download repositori ini:**
-
-```bash
-git clone https://github.com/username/fun_project_1_REAID.git
-cd fun_project_1_REAID
-
-pip install streamlit python-dotenv langchain
+▶️ Cara Menjalankan
+Clone repositori ini atau salin file app.py dan folder assets/ ke direktori lokal.
+Pastikan sudah menginstal Streamlit:
 ```
-## Install dependensi:
-
-```bash
-pip install streamlit python-dotenv langchain
-Atur environment variable untuk LLM:
-```
-
-Buat file .env dan isi seperti ini:
-```bash
-GROQ_API=your_groq_api_key
-GROQ_URL=https://api.groq.com/openai/v1
+pip install streamlit
 ```
 
 Jalankan aplikasi:
-```bash
+```
 streamlit run app.py
 ```
