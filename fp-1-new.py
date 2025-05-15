@@ -1,23 +1,9 @@
 import streamlit as st
 import os
 import json
-from dotenv import load_dotenv
 import random
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import HumanMessage
+import matplotlib.pyplot as plt
 
-# Load variabel lingkungan
-load_dotenv()
-GROQ_API = os.getenv("GROQ_API")
-GROQ_URL = os.getenv("GROQ_URL")
-
-# Konfigurasi LLM
-llm = ChatOpenAI(
-    model="llama3-8b-8192",
-    openai_api_key=GROQ_API,
-    base_url=GROQ_URL,
-    temperature=0,
-)
 
 # Fungsi untuk memuat data dari file JSON
 def load_quiz_data():
@@ -35,27 +21,21 @@ if "questions" not in st.session_state:
 st.session_state.user_name = st.text_input("Masukkan nama kamu:")
 num_questions = st.number_input("Jumlah soal:", min_value=1, max_value=10, step=1)
 
-# Menambahkan button untuk mulai kuis
+# Tombol mulai kuis
 if st.button("Mulai Kuis"):
     if not st.session_state.user_name:
         st.warning("Silakan isi nama kamu dulu.")
     else:
         with st.spinner("Mengambil pertanyaan..."):
-            # Memuat data kuis dari file JSON
             quiz_data = load_quiz_data()
-            # Menyimpan pertanyaan acak ke dalam session state
             st.session_state.questions = random.sample(quiz_data, num_questions)
-            # Acak pilihan jawaban untuk setiap pertanyaan
             for q in st.session_state.questions:
                 random.shuffle(q["options"])
-            # Inisialisasi jawaban yang sudah dipilih
             st.session_state.current_answers = []
-
 
 # Tampilkan pertanyaan
 if st.session_state.questions:
     st.subheader(f"Kuis untuk: {st.session_state.user_name}")
-
 
     for i, q in enumerate(st.session_state.questions):
         st.markdown(f"**{i+1}. {q['question']}**")
@@ -64,44 +44,67 @@ if st.session_state.questions:
             q["options"],
             key=f"answer_{i}"
         )
-       
-    
+
+    # Tombol selesai
     if st.button("Selesai"):
         if not st.session_state.user_name:
             st.error("⚠️ Nama harus diisi sebelum menyelesaikan kuis.")
         else:
             benar = 0
             total = len(st.session_state.questions)
+
+            st.subheader("📊 Review Jawaban")
+
             for i, q in enumerate(st.session_state.questions):
                 user_answer = st.session_state.get(f"answer_{i}", None)
-                if user_answer == q["answer"]:
+                is_correct = user_answer == q["answer"]
+                if is_correct:
                     benar += 1
 
+                col1, col2, col3 = st.columns([4, 3, 1])
+                with col1:
+                    st.markdown(f"**{i+1}. {q['question']}**")
+                    st.markdown(f"Jawaban kamu: `{user_answer}`")
+                with col2:
+                    st.markdown(f"Jawaban benar: `{q['answer']}`")
+                with col3:
+                    st.markdown("✅" if is_correct else "❌")
+
+            salah = total - benar
+
+            # Bar chart hasil jawaban
+            fig, ax = plt.subplots()
+            bars = ax.bar(["Benar", "Salah"], [benar, salah], color=["#ADD8E6", "#FFB6C1"])
+            ax.set_ylabel("Jumlah Soal")
+            ax.set_title("Distribusi Jawaban")
+
+            for bar in bars:
+                height = bar.get_height()
+                ax.annotate(f'{int(height)}',
+                            xy=(bar.get_x() + bar.get_width() / 2, height),
+                            xytext=(0, 5),
+                            textcoords="offset points",
+                            ha='center', va='bottom')
+
+            st.pyplot(fig)
+
+            # Hasil akhir
             nilai = round((benar / total) * 100)
-
-            # Generate motivasi berdasarkan nilai
-            prompt_motivasi = f"""
-            Saya mendapatkan skor {nilai} dari kuis tentang ibu kota provinsi di Indonesia.
-            Buatkan kalimat motivasi dalam 1-2 kalimat yang mendorong saya untuk terus belajar.
-            Gunakan bahasa yang positif dan membangkitkan semangat. gunakan bahasa indonesia.
-            """
-
-            motivasi_response = llm([HumanMessage(content=prompt_motivasi)])
-            motivasi_text = motivasi_response.content.strip()
-
-            # Tampilkan hasil kuis dan motivasi
             st.subheader("🎯 Hasil Kuis")
             st.write(f"**{st.session_state.user_name}**, skor kamu: **{nilai}**")
 
-            mess= f"💡 Motivasi untukmu:\n\n{motivasi_text}"
-            if nilai >= 80:
-                st.success(mess)
+            if nilai == 100:
+                st.success("Hebat sekali! Kamu berhasil mencapai nilai sempurna — pertahankan semangat belajarmu, karena ini baru awal dari prestasi-prestasi hebat berikutnya! 🌟")
+                st.image("assets/a.jpg", caption="Grade SS")
+                st.balloons()
+            elif nilai >= 80:
+                st.success("Luar biasa! Kamu hampir sempurna — pertahankan semangat belajarmu dan jadilah inspirasi bagi yang lain!")
                 st.image("assets/a.jpg", caption="Grade A")
                 st.balloons()
             elif nilai >= 60:
-                st.warning(mess)
+                st.warning("Kerja bagus! Tinggal sedikit lagi menuju kesempurnaan — lanjutkan semangat belajarmu dan buktikan bahwa kamu bisa lebih baik lagi!")
                 st.image("assets/b.jpg", caption="Grade B")
                 st.balloons()
             else:
-                st.error(mess)
+                st.error("Jangan menyerah! Setiap langkah kecil adalah bagian dari perjalanan besar menuju pemahaman yang lebih baik — teruslah belajar, karena kamu pasti bisa lebih hebat lagi!")
                 st.image("assets/c.jpg", caption="Grade C")

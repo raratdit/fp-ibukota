@@ -27,22 +27,6 @@
         "documentation": {}
     },
     {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
-        "documentation": {}
-    },
-    {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
-        "documentation": {}
-    },
-    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -52,11 +36,20 @@
         "documentation": {}
     },
     {
-        "label": "ChatOpenAI",
-        "importPath": "langchain.chat_models",
-        "description": "langchain.chat_models",
+        "label": "matplotlib.pyplot",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "langchain.chat_models",
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -65,14 +58,6 @@
         "description": "langchain.chat_models",
         "isExtraImport": true,
         "detail": "langchain.chat_models",
-        "documentation": {}
-    },
-    {
-        "label": "HumanMessage",
-        "importPath": "langchain.schema",
-        "description": "langchain.schema",
-        "isExtraImport": true,
-        "detail": "langchain.schema",
         "documentation": {}
     },
     {
@@ -102,38 +87,11 @@
         "documentation": {}
     },
     {
-        "label": "GROQ_API",
-        "kind": 5,
-        "importPath": "fp-1-new",
-        "description": "fp-1-new",
-        "peekOfCode": "GROQ_API = os.getenv(\"GROQ_API\")\nGROQ_URL = os.getenv(\"GROQ_URL\")\n# Konfigurasi LLM\nllm = ChatOpenAI(\n    model=\"llama3-8b-8192\",\n    openai_api_key=GROQ_API,\n    base_url=GROQ_URL,\n    temperature=0,\n)\n# Fungsi untuk memuat data dari file JSON",
-        "detail": "fp-1-new",
-        "documentation": {}
-    },
-    {
-        "label": "GROQ_URL",
-        "kind": 5,
-        "importPath": "fp-1-new",
-        "description": "fp-1-new",
-        "peekOfCode": "GROQ_URL = os.getenv(\"GROQ_URL\")\n# Konfigurasi LLM\nllm = ChatOpenAI(\n    model=\"llama3-8b-8192\",\n    openai_api_key=GROQ_API,\n    base_url=GROQ_URL,\n    temperature=0,\n)\n# Fungsi untuk memuat data dari file JSON\ndef load_quiz_data():",
-        "detail": "fp-1-new",
-        "documentation": {}
-    },
-    {
-        "label": "llm",
-        "kind": 5,
-        "importPath": "fp-1-new",
-        "description": "fp-1-new",
-        "peekOfCode": "llm = ChatOpenAI(\n    model=\"llama3-8b-8192\",\n    openai_api_key=GROQ_API,\n    base_url=GROQ_URL,\n    temperature=0,\n)\n# Fungsi untuk memuat data dari file JSON\ndef load_quiz_data():\n    with open('assets/data.json', 'r') as f:\n        return json.load(f)",
-        "detail": "fp-1-new",
-        "documentation": {}
-    },
-    {
         "label": "st.session_state.user_name",
         "kind": 5,
         "importPath": "fp-1-new",
         "description": "fp-1-new",
-        "peekOfCode": "st.session_state.user_name = st.text_input(\"Masukkan nama kamu:\")\nnum_questions = st.number_input(\"Jumlah soal:\", min_value=1, max_value=10, step=1)\n# Menambahkan button untuk mulai kuis\nif st.button(\"Mulai Kuis\"):\n    if not st.session_state.user_name:\n        st.warning(\"Silakan isi nama kamu dulu.\")\n    else:\n        with st.spinner(\"Mengambil pertanyaan...\"):\n            # Memuat data kuis dari file JSON\n            quiz_data = load_quiz_data()",
+        "peekOfCode": "st.session_state.user_name = st.text_input(\"Masukkan nama kamu:\")\nnum_questions = st.number_input(\"Jumlah soal:\", min_value=1, max_value=10, step=1)\n# Tombol mulai kuis\nif st.button(\"Mulai Kuis\"):\n    if not st.session_state.user_name:\n        st.warning(\"Silakan isi nama kamu dulu.\")\n    else:\n        with st.spinner(\"Mengambil pertanyaan...\"):\n            quiz_data = load_quiz_data()\n            st.session_state.questions = random.sample(quiz_data, num_questions)",
         "detail": "fp-1-new",
         "documentation": {}
     },
@@ -142,7 +100,7 @@
         "kind": 5,
         "importPath": "fp-1-new",
         "description": "fp-1-new",
-        "peekOfCode": "num_questions = st.number_input(\"Jumlah soal:\", min_value=1, max_value=10, step=1)\n# Menambahkan button untuk mulai kuis\nif st.button(\"Mulai Kuis\"):\n    if not st.session_state.user_name:\n        st.warning(\"Silakan isi nama kamu dulu.\")\n    else:\n        with st.spinner(\"Mengambil pertanyaan...\"):\n            # Memuat data kuis dari file JSON\n            quiz_data = load_quiz_data()\n            # Menyimpan pertanyaan acak ke dalam session state",
+        "peekOfCode": "num_questions = st.number_input(\"Jumlah soal:\", min_value=1, max_value=10, step=1)\n# Tombol mulai kuis\nif st.button(\"Mulai Kuis\"):\n    if not st.session_state.user_name:\n        st.warning(\"Silakan isi nama kamu dulu.\")\n    else:\n        with st.spinner(\"Mengambil pertanyaan...\"):\n            quiz_data = load_quiz_data()\n            st.session_state.questions = random.sample(quiz_data, num_questions)\n            for q in st.session_state.questions:",
         "detail": "fp-1-new",
         "documentation": {}
     },
