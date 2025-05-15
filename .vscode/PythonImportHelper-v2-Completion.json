@@ -36,12 +36,12 @@
         "documentation": {}
     },
     {
-        "label": "matplotlib.pyplot",
+        "label": "pandas",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "matplotlib.pyplot",
-        "description": "matplotlib.pyplot",
-        "detail": "matplotlib.pyplot",
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
         "documentation": {}
     },
     {

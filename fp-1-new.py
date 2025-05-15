@@ -2,8 +2,7 @@ import streamlit as st
 import os
 import json
 import random
-import matplotlib.pyplot as plt
-
+import pandas as pd
 
 # Fungsi untuk memuat data dari file JSON
 def load_quiz_data():
@@ -72,21 +71,13 @@ if st.session_state.questions:
 
             salah = total - benar
 
-            # Bar chart hasil jawaban
-            fig, ax = plt.subplots()
-            bars = ax.bar(["Benar", "Salah"], [benar, salah], color=["#ADD8E6", "#FFB6C1"])
-            ax.set_ylabel("Jumlah Soal")
-            ax.set_title("Distribusi Jawaban")
+            # Tampilkan bar chart menggunakan st.bar_chart
+            st.subheader("📈 Grafik Distribusi Jawaban")
+            chart_data = pd.DataFrame({
+                "Jumlah Soal": [benar, salah]
+            }, index=["Benar", "Salah"])
 
-            for bar in bars:
-                height = bar.get_height()
-                ax.annotate(f'{int(height)}',
-                            xy=(bar.get_x() + bar.get_width() / 2, height),
-                            xytext=(0, 5),
-                            textcoords="offset points",
-                            ha='center', va='bottom')
-
-            st.pyplot(fig)
+            st.bar_chart(chart_data)
 
             # Hasil akhir
             nilai = round((benar / total) * 100)
